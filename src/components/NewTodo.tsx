@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./NewTodo.css";
 
 interface NewTodoProps {
   addTodo: (text: string) => void;
@@ -19,7 +20,7 @@ const NewTodo: React.FC<NewTodoProps> = ({ addTodo }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="form-control">
         <label htmlFor="todo-text">Todo Text</label>
         <input
           type="text"
