@@ -10,10 +10,14 @@ const App: React.FC = () => {
     setTodos((prev) => [...prev, { id: Math.random().toString(), text: text }]);
   };
 
+  const deleteTodo = (todoId: string) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== todoId));
+  };
+
   return (
     <div className="App">
       <NewTodo addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 };
